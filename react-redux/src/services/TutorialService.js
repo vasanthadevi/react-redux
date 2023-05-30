@@ -1,5 +1,6 @@
 import http from "../http-common";
 
+
 const getAll = () => {
     return http.get("/tutorials");
 };
@@ -9,7 +10,7 @@ const get = id => {
 };
 
 const create = data => {
-    return http.post("/tutorails", data);
+    return http.post("/tutorials", data);
 };
 
 const update = (id, data) => {
@@ -20,13 +21,13 @@ const remove = id => {
     return http.delete(`/tutorials/${id}`);
 };
 
-const removeAll = () => {
-    return http.delete(`/tutorials`);
+const removeAll = ( title ) => {
+    return http.get(`/tutorials?title=${title}`);
 };
 
 const findByTitle = title => {
     return http.get(`/tutorials?title=${title}`);
-};
+  };
 
 
 const TutorialService = {

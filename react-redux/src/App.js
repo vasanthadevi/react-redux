@@ -1,7 +1,11 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import AddTutorial from "./components/AddTutorial";
+import Tutorial from "./components/Tutorial";
+import TutorialsList from "./components/TutorialsList";
 
 function App() {
   return (
@@ -22,8 +26,9 @@ function App() {
             </Link>
           </li>
         </div>
+      </nav>
 
-        <div className="container mt-3">
+      <div className="container mt-3">
         <Routes>
           <Route path="/" element={<TutorialsList/>} />
           <Route path="/tutorials" element={<TutorialsList/>} />
@@ -31,9 +36,6 @@ function App() {
           <Route path="/tutorials/:id" element={<Tutorial/>} />
         </Routes>
       </div>
-      </nav>
-
-
     </Router>
   );
 }
